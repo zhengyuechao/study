@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!--服务地址-->
+	<item key="REMOTE_SERVER_URL" value="http://113.113.113.113:1111" desc_en=""/>
+	<!--API接收消息密钥-->
+	<item key="encodingAESKey" value="encodingAESKey1111111111111" desc_en=""/> 
+	<!--企业应用的id-->
+	<item key="agentId" value="1000005" desc_en=""/> 
+	<!--接收消息服务器配置 token-->
+	<item key="token" value="tokensfasfasfasf" desc_en=""/> 
+	<!--企业ID-->
+	<item key="corpId" value="corpId111111111111111111111" desc_en=""/> 
+	<!--应用密钥-->
+	<item key="agentSecret" value="agentSecret111111111111111111111" desc_en=""/>   
+</root>
