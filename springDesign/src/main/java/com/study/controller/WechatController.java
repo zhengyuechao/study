@@ -25,7 +25,7 @@ public class WechatController {
 	@GetMapping(value="test")
 	public String test(HttpServletRequest request,HttpServletResponse response) {
 		System.out.println("微信控制器测试");
-		String echostr = "bo哥,宇宙无敌，法力无边";
+		String echostr = "bo哥,宇宙无敌，法力无边，就目前来看波哥过气并且out的成熟透顶的程序员";
 		return echostr;
 	}
 	
