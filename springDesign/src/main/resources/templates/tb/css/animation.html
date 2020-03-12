@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .demo{
+        width:100px;
+        height:100px;
+        background-color: #f40;
+        position: absolute;
+        left: 0;
+        /* 只有在属性变化的时候才会有动画效果 */
+        transition: left 2s;
+        animation: move 2s ease-in-out;
+    }
+    @keyframes move {
+        0%{
+            left: 0;
+            top:0;
+        }
+        25%{
+            left: 300px;
+            top: 0;
+        }
+        50%{
+            left: 300px;
+            top:300px;
+        }
+        75%{
+            left: 0px;
+            top:300px;
+        }
+        100%{
+            left: 0x;
+            top:0;
+        }
+    }
+
+    /*字体*/
+    body{
+        font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    }
+    /*使用自定义select*/
+    select {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: url("http://") no-repeat right center;
+    }
+
+    /*去除input右边的x*/
+    ::-ms-clear {
+        display: none;
+    }
+
+    /*去除密码框的小眼睛*/
+    ::-ms-reveal {
+        display: none;
+    }
+
+    /*谷歌浏览器点击后会使得内边框有颜色，清除内边框*/
+    input,
+    textarea,
+    select,
+    button {
+        outline: none;
+    }
+
+    /*边框阴影效果*/
+    .modal {
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.14), 0 4px 5px 0 rgba(0, 0, 0, 0.098), 0 1px 10px 0 rgba(0, 0, 0, 0.084);
+    }
+
+    /*ul去除黑点*/
+    ul {
+        list-style-type: none;
+    }
+
+    /*选中的文字变色*/
+    ::selection {
+        background: #F03861;
+        color: #FFFFFF;
+    }
+
+    ::-moz-selection {
+        background: #F03861;
+        color: #FFFFFF;
+    }
+
+    /*禁止选择文字*/
+    body {
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /*火狐点击按钮不出现内边线*/
+    select,
+    button {
+        outline: none;
+        -moz-outline: none;
+    }
+
+    /*背景图片居中显示*/
+    .bg {
+        background-image: url("http://");
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+    /*巧用after<p data-unit="元">剩余话费40</p>*/
+    [data-unit]:after {
+        content: attr(data-unit);
+        color: #3b98e0;
+    }
+
+    /*倒影实现 巧用after <span data-reflection="我是倒影">我是倒影</span>*/
+    [data-reflection] {
+        position: relative;
+    }
+    [data-reflection]:after {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        content: attr(data-reflection);
+        -moz-transform: scaleX(-1) rotate(180deg);
+        -webkit-transform: scaleX(-1) rotate(180deg);
+        -o-transform: scaleX(-1) rotate(180deg);
+        color: #d3d3d3;
+    }
+    /*currentColor的值是当前元素的color属性的值*/
+    .box {
+        color: #3b98e0;
+        border: 1px solid currentColor;
+    }
+
+    /* 多图全屏滚动效果 原文https://github.com/sorrycc/blog/issues/14    demo: https://jsfiddle.net/0xjgxmgw/ */
+    .section {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .section:nth-of-type(1) {
+        background-image: url('https://unsplash.it/1024/683?image=1068');
+    }
+    .section:nth-of-type(2) {
+        background-image: url('https://unsplash.it/1024/683?image=1073');
+    }
+    .section:nth-of-type(3) {
+        background-image: url('https://unsplash.it/1024/683?image=1047');
+    }
+    p {
+        color: #fff;
+        font-size: 100px;
+        font-family: monospace;
+    }
+    /*改变html 鼠标样式 url为光标文件地址 文件格式必须为：.cur 或 .ani*/
+    /* cursor: url(url); */
+
+    /* 改变手机端html头部导航条颜色 */
+    /* <meta name="theme-color" content="#fff"> */
+    </style>
+    
+</head>
+<body>
+    <!-- 关键帧动画-->
+    <!-- <div class="demo"></div> -->
+    <div class="section"></div>
+</body>
+</html>
