@@ -33,4 +33,9 @@ public class UserController {
         model.addAttribute("users", users);
         return "index";
     }
+    
+    @GetMapping("/clock")
+	public String clock(Model model) {  
+		return "base/clock";
+	}
 }
