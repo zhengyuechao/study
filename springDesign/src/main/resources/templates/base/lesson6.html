@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>doc</title>
+	<link rel="stylesheet" type="text/css" href="les6css.css">
+</head>
+<body>
+
+	基础布局</br>
+	<div class="right"></div>
+	<div class="left"></div>
+	margin缺陷</br>
+	<div class="wrapper">
+		<div class="content"></div>
+	</div>
+	
+	区域,不能因为改结构而乱加层破坏原有设计
+	html结构重要，不能因为fix bug 而改结构
+	<!-- <div class="wrapper2">
+		<div class="demo1">1</div>
+		<div class="demo2">2</div>
+	</div>--></br>
+	<span class="box1">123</span>
+	<span class="box2">323</span> 
+	<div class="demo1">1</div>
+	<div class="demo2">2</div> 
+	
+	CSS三大模型，盒模型 层模型 浮动模型</br>
+	float :left  right </br>
+	
+	<div class="wrapper3">
+		<div class="content3">1</div>
+		<div class="content3">2</div>
+		<div class="content3">3</div>
+		<div class="content3">4</div>
+		<div class="content3">5</div>
+		<div class="content3">6</div>
+		<div class="content3">7</div>
+		<div class="content3">8</div>
+		<div class="content3">9</div>
+	</div>
+	
+	权重 !important
+	行间样式
+	id
+	class | 属性 | 伪类[在复习下]
+	标签 | 伪元素
+	通配符
+	
+	claer :both 必须是块级元素才能生效
+	包裹浮动元素
+	</br>
+	<span>很帅</span>
+	<div class="wrapper4">
+		<div class="content4">1</div>
+		<div class="content4">2</div>
+		<div class="content4">3</div>
+	</div>
+	
+	<ul class="nav">
+		<li class="list-item"><a href="#">天猫</a></li>
+		<li class="list-item"><a href="#">聚划算</a></li>
+		<li class="list-item"><a href="#">天猫超市</a></li>
+	</ul>	fsdfs fasdfafsdf
+	
+	文字溢出处理，背景图片处理 company experience
+	</br>
+	单行文本 独立技术</br>
+	多行文本 </br>
+	text-overflow:ellipsis; 显示省略符号来代表被修剪的文本。
+	语法：text-overflow: clip|ellipsis|string;
+	<div class="wrapper5">
+		规定段落中的文本不进行换行：white-space:nowrap;单行文本 独立技术
+	</div>
+	
+	<div class="wrapper-mul5">
+		规定段落中的文本不进行换行：white-space:nowrap;多行文本 独立技术
+		规定段落中的文本不进行换行：white-space:nowrap;多行文本 独立技术
+	</div>
+	背景图片，图片保留文字
+	<div class="wrapper6">
+		
+	</div>
+	行级元素只能嵌套行级元素</br>
+	块级元素可以嵌套任何元素</br>
+	
+	p 标签 不能嵌套块级元素</br>
+	a 标签不允许 嵌套 a标签</br>
+	<a class="wrapper-img6" href="https://www.taobao.com">淘宝网</a>
+	
+	
+	
+	<div class="wrapper7">
+		<div class="content7"></div>
+	</div>
+	inline block inline-block</br>
+	inline inline-block -> 有文本类特点 文本类元素</br>
+	{经验：position:absolute 	float:left /right </br>
+	设置其中一个就会变成display:inline-block }</br>
+	行级块元素 文字内容对齐 ，vertical-align : 10px; 调整对齐方式</br>
+	
+	<div class="menu">
+		<ul style="float:left">
+			<li>login</li>
+		</ul>
+		<ul style="float:right">
+			<li>setting</li>
+		</ul>
+	</div>
+	
+	<div class="wrapper8">贴吧</div>
+	
+	homework</br>
+	
+	<div class="wrapper9">
+		<img src="kong.png" class="img"/>
+		<p class="content9">
+			{最多两行 20px #333 ，顶部对齐图片，底部间距 8px}
+		</p>
+		<p class="content91">
+			{12px #666 行高 1.2}使用语义化的html标签完成以下布局，
+			考虑模块化和扩展性。容器默认宽度320px,右侧
+		</p>
+	</div>
+	
+</body>
+</html>

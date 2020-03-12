@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>世界时钟</title>
+    <script>
+        function show_time() {
+            var time=new Date();
+            var year=time.getFullYear();
+            var month=time.getMonth()+1;
+            var day=time.getDate();
+            var hour=time.getHours();
+            var min=time.getMinutes();
+            var sec=time.getSeconds();
+            document.getElementById("myclock").innerHTML="<h1>*"+year+"-"+month+"-"+day+"*&nbsp;&nbsp;" +hour+":"+min+":"+sec;
+        }
+        //serInterval:以相同的时间间隔执行某个操作
+        setInterval("show_time()",1000);
+    </script>
+    <style type="text/css">
+        .main{
+            border: solid 1px blue;
+            height: 800px;
+            width: 800px;
+        }
+        .myclock{ 
+            border: solid 1px red;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="myclock"></div> 
+    </div>
+
+</body>

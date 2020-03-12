@@ -1,0 +1,306 @@
+*{
+	
+	margin:0;
+	padding:0;
+	color:#424242;
+	font-size:arial;
+}
+.body{
+	font-size:24px;
+	font-family:fold;
+}
+
+/*先写right 后写 left*/
+.right{
+	position:absolute;
+	right:0;
+	width:100px;
+	height:100px;
+	background-color:#fcc;
+	opacity: 0.5;
+}
+
+
+.left{
+	margin-right:100px;
+	right:0;
+	height:100px;
+	background-color:#123;
+}
+
+/*垂直方向的margin
+父子元素结核在一起，会取最大值。
+
+margin 塌陷，处理。
+1。border-top:1px solid red; 粗糙
+2. bfc  block format context 块级格式化;合理完美
+   如何触发一个盒子的bfc
+   
+   1. position:absolute;
+   2. display:inline-block;
+   3. float:left/right;
+   4. overflow:hidden; 溢出部分隐藏
+*/
+
+.wrapper{
+	margin-left:100px;
+	margin-top:100px;
+	width:100px;
+	height:100px;
+	background-color:black;
+	/*overflow:hidden;
+	display:inline-block;
+	position:absolute;*/
+}
+.content{
+	margin-left:50px;
+	margin-top:50px;
+	width:50px;
+	height:50px;
+	background-color:green;
+}
+
+
+.box1{
+	background-color:red;
+	margin-right:100px;
+}
+.box2{
+	background-color:green;
+	margin-left:100px;
+}
+.demo1{
+	background-color:red;
+	margin-bottom:300px;
+}
+.demo2{
+	background-color:green;
+	margin-top:100px;
+}
+.wrapper2{
+	overflow:hidden;
+}
+
+
+
+/*浮动  
+1.是元素战队
+2.战队规则是以父级别换行
+*/
+.wrapper3{
+	width:300px;
+	height:300px;
+	border:1px solid black;
+}
+
+.content3{
+	float:left;
+	color:#fff;
+	background-color:black;
+	width:100px;
+	height:100px;
+}
+
+/*定位元素包住伪元素浮动流 */
+.wrapper4::after{
+	content:"";
+	clear:both;
+	display:block;
+	
+}
+
+/*
+在定位元素也能实现，但是加上
+position ： abolute float:left/right;
+打内部把元素转化成inline-block；
+所以宽高根据行元素
+*/
+.wrapper4{ 
+	border:1px solid black;
+}
+.content4{
+	float:left;
+	width:100px;
+	height:100px;
+	background-color:black;
+	color:#fff;
+}
+
+/*导航栏*/
+a{
+	text-decoration:none;
+}
+.nav::after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.nav{
+	list-style:none;
+}
+.nav .list-item{
+	float:left;
+	margin:0px 10px;
+	height:30px;
+	line-height:30px;
+	
+}
+.nav .list-item a{
+	padding:0 5px;
+	color:#f40;
+	font-weight:bold;
+	height:30px;
+	display:block;
+	border-radius:15px;
+}
+.nav .list-item a:hover{
+	background-color:#f40;
+	color:#fff;
+}
+
+/*文字溢出*/
+
+.wrapper5{
+		width:400px;
+		height:20px;
+		line-height:20px;
+		border:solid 1px black;
+		/*单行文字溢出处理三件套*/
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+}
+
+.wrapper-mul5{
+		width:400px;
+		height:40px;
+		line-height:20px;
+		border:solid 1px black;
+		overflow:hidden;
+		/*单行文字溢出处理三件套*/
+		
+}
+
+.wrapper6{
+	width:200px;
+	height:200px;
+	border:1px solid black;
+	background-image:url(kong.png);
+	background-size:100%;
+	background-repeat:no-repeat;
+	background-position:50% 50%;/*居中*/
+	
+	
+}
+
+.wrapper-img6{
+	display:inline-block;
+	text-decoration:none;
+	color:#424242;
+	width:142px;
+	height:0px;
+	padding-top:90px;
+	overflow:hidden;
+	border:1px solid black;
+	background-image:url(https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png);
+	background-size:142px 90px; 
+	
+	/* 三件套初级
+	text-indent:200px;
+	overflow:hidden;
+	white-space:nowrap;
+	
+	三件套高级 使用padding 撑开
+	height:0px;
+	padding-top:90px;
+	overflow:hidden;
+	*/
+}
+.wrapper7::after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.wrapper7{
+	height:30px;
+	background-color:#123;
+}
+
+/*auto 是自适应*/
+.content7{
+	margin:0 auto;
+	height:30px;
+	width:1500px;
+	background-color:#0f0;
+}
+.menu::after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+.menu{
+	background-color:#100FFf;
+}
+
+
+.wrapper8::before{
+	content:"";
+	display:inline-block;
+	width:14px;
+	height:14px;
+	background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuNCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSI5OC44Njk1cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iNTUuOTgzIDEzLjQ4NyAxMzEuODI2IDMyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDU1Ljk4MyAxMy40ODcgMTMxLjgyNiAzMiIKCSB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHRpdGxlPkdyb3VwIDI8L3RpdGxlPgo8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KPGcgaWQ9IlBhZ2UtMSI+Cgk8ZyBpZD0iQXJ0Ym9hcmQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNTc5LjAwMDAwMCwgLTE2Ni4wMDAwMDApIj4KCQk8ZyBpZD0iR3JvdXAtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTU3OS4wMDAwMDAsIDE2Ni4wMDAwMDApIj4KCQkJPGcgaWQ9Ikdyb3VwIj4KCQkJCTxnIGlkPSJCTUNfVHlwZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODAuMDM1OTEyLCAwLjAwMDAwMCkiPgoJCQkJCTxwYXRoIGlkPSJTaGFwZSIgZmlsbD0iIzFCMzA1MSIgZD0iTTM2LjA2MSwyOC43MjdjMi44NTctMS4zMiw0LjUxNC0zLjc2LDQuNTE0LTYuNzE2YzAtMi40MTEtMC45MTUtNC4zNjItMi43MTUtNS43OTcKCQkJCQkJYy0xLjc5OS0xLjQzNS00LjM3MS0yLjE1My03LjY1Ny0yLjE1M2gtMTAuOGMtMC4wMjksMC0wLjA1NywwLjAyOS0wLjA1NywwLjA1OHYzMC43OTRjMCwwLjAyOSwwLjAyOCwwLjA1OCwwLjA1NywwLjA1OGgxMi40MjkKCQkJCQkJYzMuOTQyLDAsNy0xLjM3Nyw4LjgtMy45NmMwLjk0Mi0xLjM0OSwxLjQyOC0yLjk4NSwxLjQyOC00LjgyMmMwLTEuOTIzLTAuNTcxLTMuNTAxLTEuNzE0LTQuODIxCgkJCQkJCUMzOS4yMDQsMzAuMTA0LDM3LjgwNCwyOS4yNDQsMzYuMDYxLDI4LjcyN3ogTTI1LjYzMywzMS44ODRoNS41NzFjMywwLDQuNDI5LDEuMjMzLDQuNDI5LDMuNzg4cy0xLjQ1OCwzLjc4OC00LjQyOSwzLjc4OAoJCQkJCQloLTUuNTcxVjMxLjg4NHogTTMzLjU3NSwyNS40ODRjLTAuNiwwLjYwMy0xLjcxNCwwLjg5LTMuNDI5LDAuODloLTQuNTE0di02LjgwMmg0LjUxNGMxLjY4NiwwLDIuOCwwLjI4OCwzLjQyOSwwLjg5CgkJCQkJCWMwLjYsMC42MDMsMC44ODYsMS40MzYsMC44ODYsMi40OThDMzQuNDksMjQuMDQ5LDM0LjE3NSwyNC44ODEsMzMuNTc1LDI1LjQ4NHoiLz4KCQkJCQk8cGF0aCBpZD0iU2hhcGVfMV8iIGZpbGw9IiMxQjMwNTEiIGQ9Ik03Mi41NzQsMTQuMTE5YzAtMC4wMjktMC4wMjgtMC4wNTgtMC4wNTctMC4wNThoLTJjLTAuMDI4LDAtMC4wNTgsMC4wMjktMC4wNTgsMC4wMjkKCQkJCQkJbC03LjgyOCwxOC4xNjdMNTQuNzc2LDE0LjA5YzAtMC4wMjktMC4wMjktMC4wMjktMC4wNTgtMC4wMjloLTJjLTAuMDI4LDAtMC4wNTcsMC4wMjktMC4wNTcsMC4wNThsLTguMTQ0LDMwLjc5NHYwLjA1OAoJCQkJCQlDNDQuNTE4LDQ1LDQ0LjU0Niw0NSw0NC41NzQsNDVoNi4wODdjMC4wMjcsMCwwLjA1Ny0wLjAyOSwwLjA1Ny0wLjA1OGw0LjM3MS0xNi4xMjlsNi43NzEsMTQuODY3CgkJCQkJCWMwLDAuMDI4LDAuMDI5LDAuMDI4LDAuMDU4LDAuMDI4aDEuMzk5YzAuMDI5LDAsMC4wNTctMC4wMjgsMC4wNTctMC4wMjhsNi44MDEtMTQuODY3bDQuMzQzLDE2LjEyOQoJCQkJCQljMCwwLjAyOCwwLjAyOCwwLjA1OCwwLjA1OCwwLjA1OGg2LjA4NWMwLjAyOCwwLDAuMDI4LDAsMC4wNTctMC4wMjljMC0wLjAyOCwwLjAyOS0wLjAyOCwwLTAuMDU4TDcyLjU3NCwxNC4xMTl6Ii8+CgkJCQkJPHBhdGggaWQ9IlNoYXBlXzJfIiBmaWxsPSIjMUIzMDUxIiBkPSJNMTA2LjMxOCwzNy41MWgtMC4wNThjLTIuMjg2LDEuNTQ5LTQuNzE0LDIuMzIzLTcuMTcxLDIuMzIzCgkJCQkJCWMtMy4xNzIsMC01LjcxNS0wLjk3Ni03LjU0My0yLjg2OWMtMS44MDEtMS45MjMtMi43NDMtNC40Mi0yLjc0My03LjQzNGMwLTMuMDEzLDAuOTE0LTUuNDgxLDIuNzQzLTcuNDA0CgkJCQkJCWMxLjgyOC0xLjg5NCw0LjM3MS0yLjg3LDcuNTQzLTIuODdjMi41NDIsMCw0Ljg4NSwwLjc0Nyw3LjE3MSwyLjI2N2gwLjA1OGMwLjAyOCwwLDAuMDI4LTAuMDI4LDAuMDI4LTAuMDU3bDEuNDI4LTUuNTY4CgkJCQkJCWMwLTAuMDI4LDAtMC4wNTgtMC4wMjctMC4wODZjLTEuNTcyLTAuOTQ3LTMuMTQ0LTEuNDkyLTQuMjAxLTEuNzc5Yy0xLjI4NS0wLjM0NS0yLjg4NS0wLjU0NS00Ljc3MS0wLjU0NQoJCQkJCQljLTMuMDI4LDAtNS44MjgsMC42ODktOC4zNDQsMi4wMzhjLTIuNDU2LDEuMzQ5LTQuNDI4LDMuMjcyLTUuODU2LDUuNzExcy0yLjE0Myw1LjE5NC0yLjE0Myw4LjIzNwoJCQkJCQljMCwyLjMyNSwwLjM5OSw0LjQxOSwxLjIyOSw2LjQyOGMwLjgyOSwxLjk4MSwxLjk3MiwzLjY3NCwzLjQyOSw1LjA4YzIuOTcyLDIuODcsNy4yMjksNC41MDYsMTEuNjg2LDQuNTA2CgkJCQkJCWMxLjgyOCwwLDMuNDI4LTAuMjAxLDQuNzQzLTAuNTQ1YzEuMDU3LTAuMjg3LDIuNjU2LTAuODYxLDQuMTk5LTEuNzc5YzAuMDI5LTAuMDI5LDAuMDI5LTAuMDU4LDAuMDI5LTAuMDg2bC0xLjQyOS01LjU5NwoJCQkJCQlDMTA2LjM0NiwzNy41MzgsMTA2LjM0NiwzNy41MSwxMDYuMzE4LDM3LjUxeiIvPgoJCQkJPC9nPgoJCQkJPGcgaWQ9IkJNQ19Mb2dvX1R1cnEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAxLjA1Nzg0NikiPgoJCQkJCTxwb2x5Z29uIGlkPSJTaGFwZV8zXyIgZmlsbD0iIzI3REZFOSIgcG9pbnRzPSI4Ni43ODMsNDMuOTQyIDU1Ljk4MywxMy4wMDMgODYuNzgzLDEzLjAwMyAJCQkJCSIvPgoJCQkJCTxwb2x5Z29uIGlkPSJTaGFwZV80XyIgZmlsbD0iIzFCMzA1MSIgcG9pbnRzPSI4Ni43ODMsNDMuOTQyIDU1Ljk4Myw0My45NDIgNTUuOTgzLDEzLjAwMyAJCQkJCSIvPgoJCQkJPC9nPgoJCQk8L2c+CgkJPC9nPgoJPC9nPgo8L2c+Cjwvc3ZnPgo=);
+	background-repeat: no-repeat;
+	margin-right:5px;
+}
+
+.wrapper8::after{
+	content:"";
+	display:inline-block;
+	width:14px;
+	height:14px;
+	background-image:url(right.png);
+	background-size:100% 100%;
+	float:right;
+}
+
+.wrapper8{
+	width:120px;
+	height:14px;
+	font-size:14px;
+	line-height:14px;
+	background-color:#FF0;
+	
+}
+
+
+.wrapper9{
+	width:320px;
+}
+
+.wrapper9:hover{
+	width:420px;
+}
+
+.wrapper9 .img{
+	width:100px;
+	width:100px;
+	float:left;
+	
+}
+
+.content9{
+	font-size:20px;
+	line-height:20px;
+	height:40px;
+	color:#333;
+	overflow:hidden;
+	margin-bottom:8px;
+}
+
+.content91{
+	font-size:12px;
+	line-height:1.2em;
+	color:#666;
+	overflow:hidden;
+}

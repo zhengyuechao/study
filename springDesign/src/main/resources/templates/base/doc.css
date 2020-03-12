@@ -1,0 +1,242 @@
+
+/*父子*/
+.wrapper .box em {
+	background-color: red;
+}
+/*直接子元素*/
+div > em {
+	background-color: green;
+}
+
+/*浏览器遍历选择器 是从左往右还是从右往左哪个快 答案从右往左*/
+
+/*并列选择器*/
+div.demo{
+	background-color: yellow;
+}
+/*选择器选择形式
+id <div id="only">  #only{color:red;}
+class 
+标签选择器 
+通配符
+*/
+/*权重问题 
+1、!important，加在样式属性值后，权重值为 10000
+2、内联样式，如：style=””，权重值为1000
+3、ID选择器，如：#content，权重值为100
+4、类，伪类和属性选择器，如： content、:hover 权重值为10
+5、标签选择器和伪元素选择器，如：div、p、:before 权重值为1
+6、通用选择器（*）、子选择器（>）、相邻选择器（+）、同胞选择器（~）、权重值为0
+
+
+只要写在一行的选择器相加比较大小即可 选择器是100 类(class)10 标签 是1
+
+同样权重是后来先到，覆盖前面的样式
+
+*/
+#idDiv p{
+	background-color:red;
+}
+
+.classDiv .classP{
+	background-color: blue;
+}
+
+#classP#idP{
+	background-color:green;
+}
+
+
+/*分组选择器*/
+.classA,
+.classB{
+	width:100px;
+	height:100px;
+} 
+
+/*代码块
+设置字体的高
+
+字体粗度 bolder  lighter normal  bold  bolder, 数字表示 100~900
+italic;//斜体
+font-family:arial; 字体
+*/
+
+.div_tran{
+	font-size:12px;/*默认文字高度是16*/
+	font-weight:bolder;
+	font-style: italic;
+	font-family:arial;
+	color:rgb(0,255,255);
+	
+	//border-style:dotted;//dashed
+	height:0px;
+	width:0px;
+	border:1px solid black;
+	border-width:100px;
+	border-height:100px;
+	border-left-color:#435893;
+	border-top-color:transparent;
+}
+
+.div_buju{
+	border:1px solid black;
+	text-align:left;
+	height:200px;
+	line-height:20px;/*单行文本*//*单行文本高度等于容器高度垂直居中设置，只能是单行高度*/
+	text-indent:2em;/*设置空格:首行缩进,分析em 1em = 1* font-size = 16px; px是对于屏幕讲，就是分辨率*/
+}
+
+.div_decoration{
+	text-decoration:line-through;
+}
+
+.div_underline{
+	color:rgb(0,0,238);
+	text-decoration:underline;
+	cursor: pointer;/*光标*/
+}
+
+/*属性选择器[herf]*/
+a:hover{
+	text-decoration:underline;
+	background-color:#f40;
+	color:#fff;
+	font-size:20px;
+	font-weight:bold;
+	font-family:arial;
+	border-radius:10px;
+	
+}
+
+/**
+1.土鳖式(纯英文单词 green white blue )
+2.颜色代码
+(颜色代码组合：人能看到三原色 红绿蓝 
+三原色分两种，
+光学三原色 是指红绿蓝 
+美术三原色是指品红、黄、青（是青不是蓝，蓝是品红和青混合的颜色）、黑，
+鱼能看到7种，
+皮皮虾能看到32种,皮皮虾 1/3000 攻击时间 食物链顶端  蟹子 龙虾
+
+组成过程，每两位代表一个颜色，是16进制的数字。
+红00-ff 绿00-ff 蓝00-ff
+
+标准颜色代码 #000000
+简写：如果两位相同可以写成一个。
+
+)
+3.颜色函数
+rgb(255,255,255)
+*/
+
+/*
+1.行级元素 inline
+内容决定元素所占位置
+不可以通过css改变宽高
+span strong em a del
+
+2.块级元素 block 
+
+独占一行
+可以通过css改变宽高
+div p ul li ol form address
+
+3.第三类元素 行级块元素 inline-block
+内容决定大小
+可以改变宽高
+
+img 
+
+display：inline  block inline-block 可以随意展示
+
+凡是带有inline的元素，都是文字特性
+图片之间有空隙的处理方式：margin-left:-4px
+*/
+/*
+框架性讲解运用
+小白是一遍定义容器一遍写样式。
+先css，后html ，先定义功能，后选配填充样式功能。
+
+*{} 通配样式，权重为0
+body form p ul ui a h1 h2 text-decoration:none list-style:none;
+ul:list-style:none;
+*/
+/*
+Q : body magin 的值是多少，A：8px；
+盒子模型
+盒子三大部分
+盒子壁 border 
+内边距 padding
+盒子内容 width + height;
+
+外边距 margin border padding +(content = width + height )
+盒模型 计算 是 border + padding + width = border + padding + width  px;
+
+
+层模型
+
+absolute
+1.脱离原来位置进行定位
+2.相对于最近的有定位的父级定位，如果没有，则相对于文档定位。
+
+relative
+2.保留原来位置进行定位
+相对于自己原来位置定位。
+
+relative 做参照物
+absolute 做定位
+
+广告定位
+position:fixd;
+left:0;
+top:200px;
+width:50px;
+height:200px;
+
+
+
+居中定位
+position:absolute;//或者 fixed
+left:50%;
+top:50%;
+width:100px;
+height:100px;
+background-color:red;
+
+z-index : 1 层索引 
+
+作业五环
+
+永远居中
+
+*/
+.wuhuan_blue{
+	background-color:blue;
+}
+.wuhuan_yellow{
+	background-color:yellow;
+}
+.wuhuan_black{
+	background-color:black;
+}
+
+.wuhuan_green{
+	background-color:green;
+}
+
+.wuhuan_red{
+	background-color:red;
+}
+
+
+.circle_box{
+	
+	width:100px;
+	height:100px;
+	border:10px solid black;
+	border-radius:50%;
+}
+
+
+
