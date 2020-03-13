@@ -41,7 +41,7 @@ public class PropertiesLoader {
             } catch (Exception e) {
                 logger.info("Could not load properties from path:" + location + ", " + e.getMessage());
             } finally {
-                IOUtils.closeQuietly(is);
+                org.apache.commons.io.IOUtils.closeQuietly(is);
             }
         }
         return props;
