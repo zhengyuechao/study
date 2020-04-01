@@ -1,13 +1,16 @@
 server:
-  port: 8086
+  port: 8010
 spring: 
   freemarker:
-    suffix: .ftl
+    suffix: .html
     template-loader-path: classpath:/templates
     content-type: text/html; charset=utf-8  
   profiles:
     active: prod
   mvc:
     static-path-pattern: /resources/**
-
     
+    
+
+
+   

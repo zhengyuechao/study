@@ -2,4 +2,15 @@ my:
   person:
     age: 24
     name: yyyy
+ 
+my-profile:
+  name: 学习云
+  email: test@163.com
+
+
+
+weixinpay:
+  appid: 123
+  mch_id: 456
+  sign_key: 789
     
