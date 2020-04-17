@@ -3,9 +3,14 @@ package com.study.common.util;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.function.LongPredicate;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 /**
@@ -45,9 +50,7 @@ public class DateUtils {
 	 */
 	public static final String ISO_TIME_FORMAT = "HH:mm:ss";
 
-	public static void main(String[] args) {
-		System.out.println(formatTime(new Date()));
-	}
+	 
 
 	/**
 	 * 
@@ -610,6 +613,86 @@ public class DateUtils {
          SimpleDateFormat sd = new SimpleDateFormat(ISO_DATETIME_FORMAT);
          return sd.format(date);
      }
+     
+     
+     
+     public static int differentDays(Date date1,Date date2)
+     {
+    	 try {
+    		 Calendar cal1 = Calendar.getInstance();
+             cal1.setTime(date1);
+             
+             Calendar cal2 = Calendar.getInstance();
+             cal2.setTime(date2);
+            int day1= cal1.get(Calendar.DAY_OF_YEAR);
+             int day2 = cal2.get(Calendar.DAY_OF_YEAR);
+             
+             int year1 = cal1.get(Calendar.YEAR);
+             int year2 = cal2.get(Calendar.YEAR);
+             if(year1 != year2)   //同一年
+             {
+                 int timeDistance = 0 ;
+                 for(int i = year1 ; i < year2 ; i ++)
+                 {
+                     if(i%4==0 && i%100!=0 || i%400==0)    //闰年            
+                     {
+                         timeDistance += 366;
+                     }
+                     else    //不是闰年
+                     {
+                         timeDistance += 365;
+                     }
+                 }
+                 
+                 return timeDistance + (day2-day1) ;
+             }
+             else    //不同年
+             {
+                 System.out.println("判断day2 - day1 : " + (day2-day1));
+                 return day2-day1;
+             }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+         
+     }
+     
+	/**
+	 * 
+	* @Title: differentDaysNew 
+	* @Description: 两个日期相减的日期差(最正确的操作)
+	* @Author z
+	* @DateTime 2020年4月16日 上午8:27:06 
+	* @param date1
+	* @param date2
+	* @return
+	 */
+	public static int differentDaysNew(Date date1, Date date2) {
+		if (date1 == null || date2 == null) {
+			throw new RuntimeException("日期不能为空");
+		}
+		LocalDate localDate1 = date2LocalDate(date1);
+		LocalDate localDate2 = date2LocalDate(date2);
+		//return Generic.long2int(localDate1.until(localDate2, ChronoUnit.DAYS));
+		long lday = localDate1.until(localDate2, ChronoUnit.DAYS);
+		return  (int)lday;
+	}
+	 
+
+     public static LocalDate date2LocalDate(Date date) {
+         Instant instant = date.toInstant();
+         ZoneId zoneId = ZoneId.systemDefault();
+         LocalDate localDate = instant.atZone(zoneId).toLocalDate();
+         return localDate;
+     }
+     
+     public static void main(String[] args) {
+    	 Date d1 = parseDate("2020-1-1");
+    	 Date d2 = parseDate("2019-12-25");
+    	 int d =differentDaysNew(d1,d2);
+    	 System.out.println(d);
+	}
 
 
 }
