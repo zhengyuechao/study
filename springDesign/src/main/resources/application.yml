@@ -9,5 +9,18 @@ spring:
     active: prod
   mvc:
     static-path-pattern: /resources/**
+  datasource: 
+    url: jdbc:mysql://172.16.140.130:3306/senyint_sick_platform?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    xa:
+      properties:
+          useInformationSchema: true
+    
+ 
+    
     
 
+
+   
