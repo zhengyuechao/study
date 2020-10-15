@@ -10,7 +10,4 @@ spring:
   mvc:
     static-path-pattern: /resources/**
     
-    
 
-
-   
