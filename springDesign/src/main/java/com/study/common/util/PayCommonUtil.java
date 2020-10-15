@@ -73,7 +73,7 @@ public class PayCommonUtil
                 }
                 // 组装订单号
                 String countStr = maxPerMSECSize + orderNumCount + "";
-                finOrderNum = "PAY" + nowLong + countStr.substring(1);
+                finOrderNum = "PAYORDERNO-N" + nowLong + countStr.substring(1);
                 orderNumCount++ ;
             }
             return finOrderNum;

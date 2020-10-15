@@ -30,6 +30,7 @@ public class Client {
 		
 		//adam没被老板通知到，所以不用挨骂
 		boss.detach(observer);
+		boss.detach(observer2);
 		
 		//老板回来了
 		boss.setAction("咳咳，我大Boss回来了！");

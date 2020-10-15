@@ -22,6 +22,8 @@ public class Client {
 		AbstractProductB b2 = new ProductB2();
 		
 		//....
+		int r = 3>>2 ;
+		System.out.println(r);
 	}
 	
 }
