@@ -13,4 +13,12 @@ weixinpay:
   appid: 123
   mch_id: 456
   sign_key: 789
+
+spring:
+  mail: 
+    host: smtp.sina.com
+    username: zhengyuechao8816@sina.com
+    password: d4b032a4d95c5e96
+    default-encoding: UTF-8
     
+

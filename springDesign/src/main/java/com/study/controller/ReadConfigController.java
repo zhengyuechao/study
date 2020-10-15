@@ -1,10 +1,14 @@
 package com.study.controller;
 
+import java.io.IOException;
+
+import org.dom4j.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.study.common.util.ReadProfileProperties;
+import com.study.service.xml.CRUXml;
 
 /**
  * 
@@ -22,5 +26,11 @@ public class ReadConfigController {
 	@GetMapping("/config")
 	public String read(){
 		return profile.getEmail();
+	}
+	
+	@GetMapping("/modifyTag")
+	public String modify(String tag) throws DocumentException, IOException{
+		CRUXml.updateXML(tag);
+		return CRUXml.getAgeLevel(); 
 	}
 }
