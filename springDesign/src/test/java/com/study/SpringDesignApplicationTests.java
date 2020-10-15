@@ -62,6 +62,7 @@ class SpringDesignApplicationTests {
 //        
 //        System.out.println(profileProperties.getHandsome());
 		 
+		
 		//数据源
 	    HikariConfig hikariConfig = new HikariConfig();
 	    //Mysql
