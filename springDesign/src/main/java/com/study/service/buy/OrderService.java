@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.study.entity.OrderInfo;
-
+/**
+ * 策略模式
+ * @author z
+ *
+ */
 @Service
 public class OrderService {
 
