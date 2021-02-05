@@ -1,4 +1,4 @@
-package com.study.oracle;
+package com.study.demo.oracle;
 
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public class GenHikariConfig {
 	    //生成配置
 	    EngineConfig engineConfig = EngineConfig.builder()
 	            //生成文件路径
-	            .fileOutputDir("d://oraclehtml")
+	            .fileOutputDir("f://oraclehtml")
 	            //打开目录
 	            .openOutputDir(true)
 	            //生成文件类型：HTML

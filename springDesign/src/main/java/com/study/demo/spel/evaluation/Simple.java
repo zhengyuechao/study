@@ -1,4 +1,4 @@
-package com.study.spel.evaluation;
+package com.study.demo.spel.evaluation;
 
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;

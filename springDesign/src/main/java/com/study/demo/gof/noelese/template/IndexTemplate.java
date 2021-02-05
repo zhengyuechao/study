@@ -1,4 +1,4 @@
-package com.study.gof.noelse.template;
+package com.study.demo.gof.noelese.template;
 
 public class IndexTemplate {
 

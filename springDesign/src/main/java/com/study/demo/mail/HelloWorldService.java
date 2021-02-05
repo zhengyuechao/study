@@ -1,4 +1,4 @@
-package com.study.mail;
+package com.study.demo.mail;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.study.gof.AbsFactory;
+package com.study.demo.gof.AbsFactory;
 
 public interface SkinFactory {
 

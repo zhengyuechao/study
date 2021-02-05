@@ -10,6 +10,12 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * http://localhost:8010/doc.html
+ * https://www.cnblogs.com/hanstrovsky/p/12725112.html 参考地址
+ * @author zhengyc
+ *
+ */
 @Configuration
 @EnableSwagger2
 public class Swagger2Configuration {

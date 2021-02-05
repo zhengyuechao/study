@@ -1,4 +1,4 @@
-package com.study.gof.crp;
+package com.study.demo.gof.crp;
 /**
  * 
  * 责任链模式（Chain of Responsibility Pattern）为请求创建了一个接收者对象的链。
