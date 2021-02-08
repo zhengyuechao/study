@@ -22,6 +22,7 @@ import org.apache.commons.lang3.time.DateFormatUtils;
  */
 public class DateUtils {
 
+	public  final static String PUBLIC_YYYY = "yyyy";
 	private final static String YYYY = "yyyy";
 
 	private final static String MM = "MM";
