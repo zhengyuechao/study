@@ -14,7 +14,7 @@ public class TestImageToASCIIController {
 
 	  
 	 
-	    //三十二位颜色 
+	    //三十二位颜色
 	    private final static char[] color = {' ', '`', '.', '^', ',', ':', '~', '"',
 	            '<', '!', 'c', 't', '+', '{', 'i', '7', '?', 'u', '3', '0', 'p', 'w',
 	            '4', 'A', '8', 'D', 'X', '%', '#', 'H', 'W', 'M'};

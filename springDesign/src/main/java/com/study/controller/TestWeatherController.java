@@ -12,7 +12,7 @@ public class TestWeatherController {
  
     /**
      *
-     * @param url 访问路径 
+     * @param url 访问路径
      * @return
      */
     public  Document getDocument (String url){
