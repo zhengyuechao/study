@@ -20,16 +20,16 @@ public class GenHikariConfig {
 		//数据源
 	    HikariConfig hikariConfig = new HikariConfig();
 	    //Mysql
-	    //hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-	    //hikariConfig.setJdbcUrl("jdbc:mysql://172.16.140.130:3306/senyint_sick_platform?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC");
-	    //hikariConfig.setUsername("root");
-	    //hikariConfig.setPassword("root");
+	    hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+	    hikariConfig.setJdbcUrl("jdbc:mysql://172.16.161.211:3306/tscp_devdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC");
+	    hikariConfig.setUsername("tscp_dev");
+	    hikariConfig.setPassword("tscp_dev");
 	    
 	    //ORACLE
-	    hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-	    hikariConfig.setJdbcUrl("jdbc:oracle:thin:@172.16.140.130:1521:orcl");
-	    hikariConfig.setUsername("senyintccvd");
-	    hikariConfig.setPassword("senyintccvd");
+//	    hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+//	    hikariConfig.setJdbcUrl("jdbc:oracle:thin:@172.16.140.130:1521:orcl");
+//	    hikariConfig.setUsername("senyintccvd");
+//	    hikariConfig.setPassword("senyintccvd");
 	    //设置可以获取tables remarks信息
 	    hikariConfig.addDataSourceProperty("useInformationSchema", "true");
 	    hikariConfig.setMinimumIdle(2);
@@ -39,7 +39,7 @@ public class GenHikariConfig {
 	    //生成配置
 	    EngineConfig engineConfig = EngineConfig.builder()
 	            //生成文件路径
-	            .fileOutputDir("f://oraclehtml")
+	            .fileOutputDir("f://mysqlhtml")
 	            //打开目录
 	            .openOutputDir(true)
 	            //生成文件类型：HTML
@@ -88,6 +88,11 @@ public class GenHikariConfig {
 	    //执行生成
 	    new DocumentationExecute(config).execute();
 
+	}
+	
+	public static void main(String[] args) {
+		GenHikariConfig gen = new GenHikariConfig();
+		gen.GenOracle();
 	}
 
 }
