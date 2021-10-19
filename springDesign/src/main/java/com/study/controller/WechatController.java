@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.study.common.util.SignUtil;
 
 /**
- * 微信控制器
+ * 微信控制器 
  * @author Weijun Hu
  * @since 2016年7月9日 上午10:19:36
  */
